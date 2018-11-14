@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AutoMan Panel</title>
+
+    <script type="text/javascript" src="../common/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../common/vue.js"></script>
+
+    <script type="text/javascript" src="res/component/form.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+    <style>
+        #autoManApp {
+            width: 300px;
+            height: 510px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="autoManApp">
+    <div>tdi:{{tab.id}}-wid:{{tab.wid}}</div>
+    <log-list :list="tab.log"></log-list>
+</div>
+
+</body>
+</html>

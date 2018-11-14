@@ -1,0 +1,54 @@
+boolean	(optional) active
+Whether the tabs are active in their windows.
+
+boolean	(optional) pinned
+Whether the tabs are pinned.
+
+boolean	(optional) audible
+Since Chrome 45.
+
+Whether the tabs are audible.
+
+boolean	(optional) muted
+Since Chrome 45.
+
+Whether the tabs are muted.
+
+boolean	(optional) highlighted
+Whether the tabs are highlighted.
+
+boolean	(optional) discarded
+Since Chrome 54.
+
+Whether the tabs are discarded. A discarded tab is one whose content has been unloaded from memory, but is still visible in the tab strip. Its content is reloaded the next time it is activated.
+
+boolean	(optional) autoDiscardable
+Since Chrome 54.
+
+Whether the tabs can be discarded automatically by the browser when resources are low.
+
+boolean	(optional) currentWindow
+Whether the tabs are in the current window.
+
+boolean	(optional) lastFocusedWindow
+Whether the tabs are in the last focused window.
+
+TabStatus	(optional) status
+Whether the tabs have completed loading.
+Enum:"loading", or "complete"
+
+string	(optional) title
+Match page titles against a pattern. This property is ignored if the extension does not have the "tabs" permission.
+
+string or array of string	(optional) url
+Match tabs against one or more URL patterns. Fragment identifiers are not matched. This property is ignored if the extension does not have the "tabs" permission.
+
+integer	(optional) windowId
+The ID of the parent window, or windows.WINDOW_ID_CURRENT for the current window.
+
+WindowType	(optional) windowType
+The type of window the tabs are in.
+Enum:"normal", "popup", "panel", "app", or "devtools"
+
+integer	(optional) index
+The position of the tabs within their windows.

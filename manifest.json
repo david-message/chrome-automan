@@ -1,0 +1,93 @@
+{
+  "background": {
+    //    "page": "background.html"
+    "scripts": [
+      "background/bg.js",
+      "background/websocket.js",
+      "background/connect.js",
+      "background/data.js"
+    ]
+  },
+  "browser_action": {
+    //browser_action,page_action
+    "default_icon": {
+      "16": "logo/icon_16.png",
+      "24": "logo/icon_24.png",
+      "32": "logo/icon_32.png",
+      "48": "logo/icon_48.png"
+    },
+    "default_popup": "panel/index.html",
+    "default_title": "AutoMan"
+  },
+  "web_accessible_resources": [
+    "inject/inject.js"
+  ],
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "common/jquery/jquery.min.js",
+        "content/content.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "chrome_url_overrides": {
+    //一个插件只能替代一个默认页
+    "newtab": "newtab.html"
+    //    "history": "history.html",
+    //    "bookmarks": "bookmarks.html"
+  },
+  // 只能指向一个HTML文件，不能是JS文件
+  //  "devtools_page": "devtools.html",
+  //  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "description": "The world's most popular userscript manager",
+  "icons": {
+    "128": "logo/icon_128.png",
+    "32": "logo/icon_32.png",
+    "48": "logo/icon_48.png"
+  },
+  "manifest_version": 2,
+  "minimum_chrome_version": "5.0.316.0",
+  "name": "Browser AutoMan",
+  "offline_enabled": true,
+  "optional_permissions": [
+    "contentSettings",
+    "downloads"
+  ],
+  "options_page": "options.html",
+  "options_ui": {
+    "chrome_style": false,
+    "open_in_tab": true,
+    "page": "options.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webRequest",
+    "contextMenus",
+    "downloads",
+    "webNavigation",
+    "notifications",
+    "http://*/",
+    "https://*/",
+    "storage",
+    "unlimitedStorage",
+    "idle",
+    "management",
+    "webRequestBlocking",
+    "chrome://favicon/",
+    "clipboardWrite",
+    "cookies",
+    "declarativeContent",
+    "<all_urls>",
+    "debugger"
+  ],
+  "short_name": "AutoMan",
+  "version": "1.1"
+}
